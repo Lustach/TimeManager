@@ -44,9 +44,6 @@ const Mappers = Vue.extend({
 })
 //top equal to @Component
 export default class ListPart extends Mappers {
-  // RootStore.mapGetters(['double'])
-  // computed:RootStore.mapGetters(['GetQuests'])
-  // methods: store.mapMutations(['increment'])
   @Prop() messag: string;
   message: string;
   quests: object;
