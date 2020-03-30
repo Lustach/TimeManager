@@ -7,7 +7,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <v-flex justify-center row>
-        Тестовое задание №3
+        Time is money
       </v-flex>
     </v-app-bar>
     <div>
@@ -53,7 +53,7 @@ export default Vue.extend({
   //   HelloWorld,
   // },
   data: () => ({
-    drawer: null,
+    drawer: false,
     items: [
       { title: "Избранное", link:'/Favourite' },
       // { title: "Статьи", link:'LookingPage'}

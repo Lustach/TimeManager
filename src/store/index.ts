@@ -1,7 +1,7 @@
 import Vue from "vue";
 import * as Vuex from "vuex";
 import { createStore, Module } from "vuex-smart-module";
-import  RootStore from "./modules/quests";
+import  {RootStore} from "./modules/quests";
 // import FooStore from './modules/'
 // import  from './modules/quests'
 // import { Getters, Mutations, Actions, Module } from "vuex-smart-module";

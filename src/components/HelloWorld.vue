@@ -1,8 +1,7 @@
 <template>
   <v-container>
     {{ title }}
-        <ListPart v-for="i in 3" :key="i"
-        :messag="i"></ListPart>
+    <ListPart :messag="1"></ListPart>
   </v-container>
 </template>
 
@@ -11,11 +10,19 @@ import Vue from "vue";
 // import ListPart from './ListPart'
 import Component from "vue-class-component";
 import ListPart from "@/components/ListPart.vue";
+import { RootStore } from "@/store/modules/quests";
 // import RootStore from '@/store/index'
+
+const Mappers = Vue.extend({
+  computed: {
+    ...RootStore.mapGetters(["getQuests"])
+  }
+});
+
 @Component({
   components: { ListPart }
 })
-export default class HelloWorld extends Vue {
+export default class HelloWorld extends Mappers {
   // mounted:(){
   //   console.log(this.title)
   // }
@@ -24,6 +31,9 @@ export default class HelloWorld extends Vue {
   constructor() {
     super();
     this.title = "HelloWorld!";
+  }
+  deleteQ(object: object) {
+    alert(object);
   }
 }
 </script>
