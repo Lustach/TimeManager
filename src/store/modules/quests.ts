@@ -24,12 +24,23 @@ import {
 //     checked: boolean;
 //   }
 // }
+class Quest {
+  name: string;
+  constructor(name: string) {
+      this.name = name
+  }
+  // constructor(){}
+}
+
+interface HashTable<T> {
+  [key: string]: T;
+}
 
 class RootState {
   quests!: number[];
   title!: string;
   checked!: boolean;
-  Quests!: number[]
+  Quests: HashTable<Quest>={}
   constructor() {
     // this.quests = {
     //   '0': {
@@ -42,7 +53,8 @@ class RootState {
     //   }
     // }
     this.quests = [1, 2, 3, 4, 5, 6, 7]
-  }
+    this.Quests['0']= new Quest('Bobik')
+    }
   // quests: object;
   // title: string;
   // checked: boolean;
@@ -62,6 +74,7 @@ class RootGetters extends Getters<RootState> {
   get getQuests(): number[] {
     // У инстанса геттера есть свойство `state`
     // console.log(this.state.quests);
+    console.log(this.state.Quests['0'])
     return this.state.quests;
     // Для использования других геттеров есть свойство `getters`
     // return this.getters.double + this.state.count
